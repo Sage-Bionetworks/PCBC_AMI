@@ -57,6 +57,8 @@ pip install numpy pandas ipython pyzmq jinja2 tornado
 pip install pysam
 pip install sklearn
 
+apt-get install -y tcl tcl-devel tk tk-devel libagg-dev
+
 ## Desktop stuff for remote access
 apt-get install -y xubuntu-desktop
 
