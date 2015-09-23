@@ -52,12 +52,13 @@ install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr
 apt-get install -y python-pip python-dev build-essential
 apt-get install -y libzmq3 libzmq3-dev
 
+apt-get install -y tcl tcl-devel tk tk-devel libagg-dev
+
 pip install numpy pandas ipython pyzmq jinja2 tornado
 
+pip install matplotlib
 pip install pysam
 pip install sklearn
-
-apt-get install -y tcl tcl-devel tk tk-devel libagg-dev
 
 ## Desktop stuff for remote access
 apt-get install -y xubuntu-desktop
