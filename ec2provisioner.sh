@@ -54,6 +54,9 @@ apt-get install -y libzmq3 libzmq3-dev
 
 pip install numpy pandas ipython pyzmq jinja2 tornado
 
+pip install pysam
+pip install sklearn
+
 ## Desktop stuff for remote access
 apt-get install -y xubuntu-desktop
 
