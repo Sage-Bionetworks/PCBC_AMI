@@ -13,7 +13,7 @@ apt-get install -y --no-install-recommends ed less locales vim-tiny wget
 apt-get install -y curl libcurl4-openssl-dev
 apt-get install -y curl
 apt-get install -y libxml2-dev
-
+apt-get install -y git
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -83,11 +83,13 @@ apt-get install -y x2goserver x2goserver-xsession
 cd /opt/
 wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
 tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
+wget -P /opt/pathvisio-3.2.0/ http://www.pathvisio.org/wcms/wp-content/uploads/2013/03/pathvisio-eye-switch-e1363105300175.png
 
 wget -P /home/pcbc/Downloads/ http://bridgedb.org/data/gene_database/metabolites_20140516.bridge.zip
 wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Hs_Derby_20130701.zip
 wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Mm_Derby_20130701.zip
 wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Interactions-02022013-Rhea.bridge
+wget -P /home/pcbc/Downloads/ 'http://www.wikipathways.org//wpi/batchDownload.php?species=Homo%20sapiens&fileType=gpml&tag=Curation:AnalysisCollection'
 
 ## Cytoscape
 cd /opt/
