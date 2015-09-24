@@ -98,6 +98,7 @@ sh Cytoscape_3_2_1_unix.sh -q
 apt-get install -y libjpeg62
 cd /opt/
 wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
+dpkg -i rstudio-0.99.691-amd64.deb
 
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
