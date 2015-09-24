@@ -6,6 +6,10 @@ chown pcbc:users /home/pcbc
 echo pcbc:pcbc2015 | chpasswd
 chsh -s /bin/bash pcbc
 
+## Allow password login
+sed -i -e "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config
+service ssh restart
+
 apt-get update
 
 apt-get install -y --no-install-recommends ed less locales vim-tiny wget
