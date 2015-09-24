@@ -13,7 +13,7 @@
 	    "source_ami": "ami-d05e75b8",
 	    "ssh_username": "ubuntu",
 	    "ami_name": "ubuntu-PCBC {{timestamp}}",
-	    "instance_type": "c3.xlarge"
+	    "instance_type": "c3.2xlarge"
 	}	
     ],
     
