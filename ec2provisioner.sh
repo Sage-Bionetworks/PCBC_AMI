@@ -51,7 +51,7 @@ echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r
 install.r docopt
 
 ## OTher stuff
-install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr
+install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table
 install.r httr RCurl swirl
 install.r devtools
 
@@ -101,6 +101,20 @@ apt-get install -y libjpeg62
 cd /opt/
 wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
 dpkg -i rstudio-0.99.691-amd64.deb
+
+## kallisto and sleuth
+apt-get install -y cmake libhdf5-dev
+cd /root
+wget https://github.com/pachterlab/kallisto/archive/v0.42.3.tar.gz
+cd kallisto-0.42.3
+mkdir build
+cd build
+cmake .. && make && make install
+
+Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/sleuth")'
+
+## Bioconductor
+Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
 
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
