@@ -63,6 +63,10 @@ pip install sklearn
 ## Desktop stuff for remote access
 apt-get install -y xubuntu-desktop
 
+## PathVisio
+cd /home/ubuntu/
+wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
+tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
 
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
