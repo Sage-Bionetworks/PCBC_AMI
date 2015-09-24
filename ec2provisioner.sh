@@ -64,9 +64,14 @@ pip install sklearn
 apt-get install -y xubuntu-desktop
 
 ## PathVisio
-cd /home/ubuntu/
+cd /opt/
 wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
 tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
+
+## Cytoscape
+cd /opt/
+wget http://chianti.ucsd.edu/cytoscape-3.2.1/Cytoscape_3_2_1_unix.sh
+sh Cytoscape_3_2_1_unix.sh -q
 
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
