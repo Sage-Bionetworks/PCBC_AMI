@@ -9,6 +9,12 @@ To build:
 packer build pcbc.json
 ```
 
+What actually happens in a build is each provisioner script is run on a base AMI:
+
+1. ec2provisioner.sh
+1. altanalyze_provisioner.sh
+1. synapseprovisioner.sh
+
 Has manual finishing steps:
 
 First, edit `/etc/ssh/sshd_config` and set `PasswordAuthentication yes`, then `service restart ssh` to allow password login to the machine.
