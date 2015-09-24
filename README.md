@@ -9,7 +9,11 @@ To build:
 packer build pcbc.json
 ```
 
-Has a manual finishing step to make a pretty graphical panel to launch the installed apps (for RStudio, PathVisio, Cytoscape, and AltAnalyze). Start an instance of the AMI created in the last step and add the following commands to the panel as launchers:
+Has manual finishing steps:
+
+First, edit `/etc/ssh/sshd_config` and set `PasswordAuthentication yes`, then `service restart ssh` to allow password login to the machine.
+
+to make a pretty graphical panel to launch the installed apps (for RStudio, PathVisio, Cytoscape, and AltAnalyze). Start an instance of the AMI created in the last step and add the following commands to the panel as launchers:
 
 1. AltAnalyze - `python /opt/altanalyze/AltAnalyze.py`, working directory `/opt/altanalyze/`, icon `/opt/altanalyze/Config/icon.gif`
 1. RStudio - just add RStudio from add to panel menu
@@ -18,3 +22,4 @@ Has a manual finishing step to make a pretty graphical panel to launch the insta
 
 Then, save the instance of this image.
 
+To administer as root, use key file and login as `ubuntu` user, then `sudo -i` to get root shell.
