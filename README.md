@@ -16,3 +16,5 @@ Has a manual finishing step to make a pretty graphical panel to launch the insta
 1. Cytoscape - `/bin/sh "/opt/Cytoscape_v3.2.1/Cytoscape"`
 1. PathVisio - `java -jar pathvisio.jar /opt/pathvisio-3.2.0/pathvisio.jar "$@"`, working directory `/opt/pathvisio-3.2.0/`, icon `/opt/pathvisio-3.2.0/pathvisio-eye-switch-e1363105300175.png`
 
+Then, save the instance of this image.
+
