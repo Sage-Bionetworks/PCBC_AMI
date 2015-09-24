@@ -3,10 +3,7 @@
 sudo pip install synapseclient
 
 ## For the R client
-apt-get install -y curl libcurl3-openssl-dev
-install.r RJSONIO RCurl digest
-echo -e '#!/usr/bin/Rscript\nsource("http://depot.sagebase.org/CRAN.R") ; pkgInstall(c("synapseClient"))' > /tmp/installsynapse.R
-Rscript /tmp/installsynapse.R
+install.r RJSONIO digest
 
-rm /tmp/installsynapse.R
+Rscript -e 'source("http://depot.sagebase.org/CRAN.R") ; pkgInstall(c("synapseClient"))'
 

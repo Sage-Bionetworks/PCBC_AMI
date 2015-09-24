@@ -4,15 +4,16 @@ useradd pcbc
 mkdir /home/pcbc
 chown pcbc:users /home/pcbc
 echo pcbc:pcbc2015 | chpasswd
-
-useradd docker
-mkdir /home/docker
-chown docker:docker /home/docker
-addgroup docker staff
+chsh -s /bin/bash pcbc
 
 apt-get update
 
 apt-get install -y --no-install-recommends ed less locales vim-tiny wget
+
+apt-get install -y curl libcurl4-openssl-dev
+apt-get install -y curl
+apt-get install -y libxml2-dev
+
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -20,6 +21,9 @@ locale-gen en_US.utf8
 /usr/sbin/update-locale LANG=en_US.UTF-8
 
 export LC_ALL="en_US.UTF-8"
+
+## Desktop
+apt-get install -y xubuntu-desktop
 
 ## Use Ubuntu repo at CRAN, and use RStudio CDN as mirror
 ## This gets us updated r-base, r-base-dev, r-recommended and littler
@@ -39,41 +43,62 @@ ln -s /usr/share/doc/littler/examples/install2.r /usr/local/bin/install2.r
 ln -s /usr/share/doc/littler/examples/installGithub.r /usr/local/bin/installGithub.r
 ln -s /usr/share/doc/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r
 
+## Set a default CRAN Repo
+echo 'options(repos = list(CRAN="https://cran.rstudio.com/"))' >> /etc/R/Rprofile.site
+
+echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r
+
 install.r docopt
 
-## Set a default CRAN Repo
-echo 'options(repos = list(CRAN="http://cran.rstudio.com/"))' >> /etc/R/Rprofile.site
-
 ## OTher stuff
-install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr
+install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr
+install.r httr RCurl swirl
+install.r devtools
 
+Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
 
 ## For python/ipython
 apt-get install -y python-pip python-dev build-essential
 apt-get install -y libzmq3 libzmq3-dev
 
-apt-get install -y tcl tcl-devel tk tk-devel libagg-dev python-tk
+apt-get install -y tcl tcl-dev tk tk-dev libagg-dev python-tk
 
-pip install numpy pandas ipython pyzmq jinja2 tornado
+apt-get install -y openjdk-7-jre
+
+pip install numpy
+pip install pandas
+pip install ipython pyzmq jinja2 tornado
 
 pip install matplotlib
 pip install pysam
 pip install sklearn
 
-## Desktop stuff for remote access
-apt-get install -y xubuntu-desktop
+## x2go server for remote access
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:x2go/stable
+apt-get update
+apt-get install -y x2goserver x2goserver-xsession
 
 ## PathVisio
 cd /opt/
 wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
 tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
 
+wget -P /home/pcbc/Downloads/ http://bridgedb.org/data/gene_database/metabolites_20140516.bridge.zip
+wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Hs_Derby_20130701.zip
+wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Mm_Derby_20130701.zip
+wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Interactions-02022013-Rhea.bridge
+
 ## Cytoscape
 cd /opt/
 wget http://chianti.ucsd.edu/cytoscape-3.2.1/Cytoscape_3_2_1_unix.sh
 sh Cytoscape_3_2_1_unix.sh -q
 
+## RStudio
+apt-get install -y libjpeg62
+cd /opt/
+wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
+
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 rm -rf /var/lib/apt/lists/*
-
