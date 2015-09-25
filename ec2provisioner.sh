@@ -77,6 +77,14 @@ pip install matplotlib
 pip install pysam
 pip install sklearn
 
+pip install PyPDF2
+pip install fastcluster
+
+## ChipSeq stuff
+pip install MACS2
+
+apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
+
 ## x2go server for remote access
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:x2go/stable
