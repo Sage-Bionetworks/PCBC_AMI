@@ -72,6 +72,7 @@ apt-get install -y openjdk-7-jre
 pip install numpy
 pip install pandas
 pip install ipython pyzmq jinja2 tornado
+pip install scipy
 
 pip install matplotlib
 pip install pysam
@@ -79,6 +80,7 @@ pip install sklearn
 
 pip install PyPDF2
 pip install fastcluster
+pip install patsy
 
 ## ChipSeq stuff
 pip install MACS2
