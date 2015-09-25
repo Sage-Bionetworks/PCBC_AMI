@@ -106,6 +106,11 @@ cd /opt/
 wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
 dpkg -i rstudio-0.99.691-amd64.deb
 
+## RStudio Server
+cd /root/
+wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb
+dpkg -i rstudio-server-0.99.484-amd64.deb
+
 ## kallisto and sleuth
 apt-get install -y cmake libhdf5-dev
 cd /root
