@@ -13,7 +13,17 @@
 	    "source_ami": "ami-d05e75b8",
 	    "ssh_username": "ubuntu",
 	    "ami_name": "ubuntu-PCBC {{timestamp}}",
-	    "instance_type": "c3.2xlarge"
+	    "instance_type": "c3.2xlarge",
+	    "ami_block_device_mappings": [ {
+		"device_name": "/dev/xvda",
+		"volume_size": 100,
+		"delete_on_termination": true
+            } ],
+            "launch_block_device_mappings": [ {
+		"device_name": "/dev/xvda",
+		"volume_size": 100,
+		"delete_on_termination": true
+            } ]
 	}	
     ],
     
