@@ -75,7 +75,7 @@ pip install numpy
 pip install pandas
 pip install ipython pyzmq jinja2 tornado
 pip install scipy
-pip install igraph
+pip install python-igraph
 
 pip install matplotlib
 pip install pysam
