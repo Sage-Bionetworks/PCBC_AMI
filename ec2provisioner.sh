@@ -69,10 +69,13 @@ apt-get install -y tcl tcl-dev tk tk-dev libagg-dev python-tk
 
 apt-get install -y openjdk-7-jre
 
+apt-get install -y python-imaging-tk
+
 pip install numpy
 pip install pandas
 pip install ipython pyzmq jinja2 tornado
 pip install scipy
+pip install igraph
 
 pip install matplotlib
 pip install pysam
@@ -131,6 +134,8 @@ cd build
 cmake .. && make && make install
 
 Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/sleuth")'
+
+script -e 'source("http://bioconductor.org/biocLite.R"); biocLite("hopach")'
 
 ## Bioconductor
 Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
