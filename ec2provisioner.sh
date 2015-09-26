@@ -18,6 +18,7 @@ apt-get install -y curl libcurl4-openssl-dev
 apt-get install -y curl
 apt-get install -y libxml2-dev
 apt-get install -y git
+apt-get install -y openjdk-7-jre
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -64,12 +65,9 @@ Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
 ## For python/ipython
 apt-get install -y python-pip python-dev build-essential
 apt-get install -y libzmq3 libzmq3-dev
-
 apt-get install -y tcl tcl-dev tk tk-dev libagg-dev python-tk
-
-apt-get install -y openjdk-7-jre
-
 apt-get install -y python-imaging-tk
+apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
 
 pip install numpy
 pip install pandas
@@ -87,8 +85,6 @@ pip install patsy
 
 ## ChipSeq stuff
 pip install MACS2
-
-apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
 
 ## x2go server for remote access
 apt-get install -y software-properties-common
