@@ -68,14 +68,14 @@ apt-get install -y libzmq3 libzmq3-dev
 apt-get install -y tcl tcl-dev tk tk-dev libagg-dev python-tk
 apt-get install -y python-imaging-tk
 apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
+apt-get install -y libreoffice
 
-pip install numpy
-pip install pandas
+apt-get install -y python-numpy python-matplotlib python-scipy
+
 pip install ipython pyzmq jinja2 tornado
-pip install scipy
 pip install python-igraph
+pip install pandas
 
-pip install matplotlib
 pip install pysam
 pip install sklearn
 
@@ -124,6 +124,7 @@ dpkg -i rstudio-server-0.99.484-amd64.deb
 apt-get install -y cmake libhdf5-dev
 cd /root
 wget https://github.com/pachterlab/kallisto/archive/v0.42.3.tar.gz
+tar xzf v0.42.3.tar.gz
 cd kallisto-0.42.3
 mkdir build
 cd build
