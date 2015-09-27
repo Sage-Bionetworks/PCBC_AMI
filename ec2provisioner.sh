@@ -69,6 +69,7 @@ apt-get install -y tcl tcl-dev tk tk-dev libagg-dev python-tk
 apt-get install -y python-imaging-tk
 apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
 apt-get install -y libreoffice
+apt-get install -y samtools
 
 apt-get install -y python-numpy python-matplotlib python-scipy
 
