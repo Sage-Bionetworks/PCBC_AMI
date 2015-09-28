@@ -138,6 +138,9 @@ script -e 'source("http://bioconductor.org/biocLite.R"); biocLite("hopach")'
 ## Bioconductor
 Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
 
+## Swirl courses
+Rscript -e 'library(swirl) ; install_from_swirl("R_Programming_Alt"); install_from_swirl("Exploratory_Data_Analysis"); install_from_swirl("Data_Analysis");  install_from_swirl("Getting_and_Cleaning_Data");'
+
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 rm -rf /var/lib/apt/lists/*
