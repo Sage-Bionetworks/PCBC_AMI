@@ -14,10 +14,7 @@ apt-get update
 
 apt-get install -y --no-install-recommends ed less locales vim-tiny wget
 
-apt-get install -y curl libcurl4-openssl-dev
-apt-get install -y curl
-apt-get install -y libxml2-dev
-apt-get install -y git
+apt-get install -y curl libcurl4-openssl-dev libxml2-dev git
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -55,19 +52,13 @@ echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r
 install.r docopt
 
 ## OTher stuff
-install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table
-install.r httr RCurl swirl
-install.r devtools
+install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table httr RCurl swirl devtools
 
 Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
+Rscript -e 'devtools::install_github("brian-bot/githubr")'
 
 ## For python/ipython
-apt-get install -y python-pip python-dev build-essential
-apt-get install -y libzmq3 libzmq3-dev
-
-apt-get install -y tcl tcl-dev tk tk-dev libagg-dev python-tk
-
-apt-get install -y openjdk-7-jre
+apt-get install -y python-pip python-dev build-essential libzmq3 libzmq3-dev tcl tcl-dev tk tk-dev libagg-dev python-tk openjdk-7-jre
 
 pip install numpy
 pip install pandas
@@ -134,6 +125,14 @@ Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/s
 
 ## Bioconductor
 Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
+
+Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("BSgenome", "Rsamtools", "ShortRead"))'
+
+## ngsPlot
+## Need to export NGSPLOT=/opt/ngsplot-2.61
+cd /root
+wget https://github.com/shenlab-sinai/ngsplot/archive/2.61.tar.gz
+tar xzf 2.61.tar.gz -C /opt
 
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds
