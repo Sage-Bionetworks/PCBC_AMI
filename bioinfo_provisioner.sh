@@ -1,3 +1,5 @@
+#!/bin/bash -x
+
 ## PathVisio
 cd /opt/
 wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz

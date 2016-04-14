@@ -12,7 +12,7 @@ chsh -s /bin/bash pcbc
 
 apt-get update
 apt-get install -y --no-install-recommends ed less locales vim-tiny wget
-apt-get install -y curl libcurl4-openssl-dev libxml2-dev git
+apt-get install -y curl libcurl4-openssl-dev libxml2-dev git libncurses5-dev
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -120,36 +120,36 @@ apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
 #
 # Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("BSgenome", "Rsamtools", "ShortRead"))'
 
-## ngsPlot
-## Need to export NGSPLOT=/opt/ngsplot-2.61
-cd /root
-wget https://github.com/shenlab-sinai/ngsplot/archive/2.61.tar.gz
-tar xzf 2.61.tar.gz -C /opt
-
-## Homer stuff
-mkdir /opt/ucsc
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat -P /opt/ucsc
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig -P /opt/ucsc
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver -P /opt/ucsc
-chmod +x /opt/ucsc/*
-export PATH=${PATH}:/opt/ucsc
-
-cd /root
-wget http://weblogo.berkeley.edu/release/weblogo.2.8.2.tar.gz
-tar xzf weblogo.2.8.2.tar.gz -C /opt
-export PATH=${PATH}:/opt/weblogo
-
-# samtools
-cd /root
-wget -O samtools-1.3.tar.bz2 "http://downloads.sourceforge.net/project/samtools/samtools/1.3/samtools-1.3.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsamtools%2Ffiles%2F&ts=1460658865&use_mirror=iweb"
-tar xjf samtools-1.3.tar.bz2
-cd samtools-1.3
-./configure && make && make install
-
-mkdir /opt/homer
-export PATH=$PATH:/opt/homer/bin
-wget http://homer.salk.edu/homer/configureHomer.pl -C /opt/homer
-perl /opt/homer/configureHomer.pl -install
+# ## ngsPlot
+# ## Need to export NGSPLOT=/opt/ngsplot-2.61
+# cd /root
+# wget https://github.com/shenlab-sinai/ngsplot/archive/2.61.tar.gz
+# tar xzf 2.61.tar.gz -C /opt
+#
+# ## Homer stuff
+# mkdir /opt/ucsc
+# wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat -P /opt/ucsc
+# wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig -P /opt/ucsc
+# wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver -P /opt/ucsc
+# chmod +x /opt/ucsc/*
+# export PATH=${PATH}:/opt/ucsc
+#
+# cd /root
+# wget http://weblogo.berkeley.edu/release/weblogo.2.8.2.tar.gz
+# tar xzf weblogo.2.8.2.tar.gz -C /opt
+# export PATH=${PATH}:/opt/weblogo
+#
+# # samtools
+# cd /root
+# wget -O samtools-1.3.tar.bz2 "http://downloads.sourceforge.net/project/samtools/samtools/1.3/samtools-1.3.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsamtools%2Ffiles%2F&ts=1460658865&use_mirror=iweb"
+# tar xjf samtools-1.3.tar.bz2
+# cd samtools-1.3
+# ./configure && make && make install
+#
+# mkdir /opt/homer
+# export PATH=$PATH:/opt/homer/bin
+# wget http://homer.salk.edu/homer/configureHomer.pl -C /opt/homer
+# perl /opt/homer/configureHomer.pl -install
 
 ## Cleanup
 rm -rf /tmp/downloaded_packages/ /tmp/*.rds

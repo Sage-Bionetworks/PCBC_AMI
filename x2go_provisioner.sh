@@ -1,3 +1,5 @@
+#!/bin/bash -x
+
 ## x2go server for remote access
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:x2go/stable

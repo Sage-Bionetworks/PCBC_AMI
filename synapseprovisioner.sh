@@ -6,4 +6,3 @@ sudo pip install synapseclient
 install.r RJSONIO digest
 
 Rscript -e 'source("http://depot.sagebase.org/CRAN.R") ; pkgInstall(c("synapseClient"))'
-

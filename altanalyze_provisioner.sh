@@ -1,3 +1,5 @@
+#!/bin/bash -x
+
 cd /opt
 git clone https://github.com/kdaily/altanalyze.git
 cd altanalyze

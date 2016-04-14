@@ -1,3 +1,5 @@
+#!/bin/bash -x
+
 ## Use Ubuntu repo at CRAN, and use RStudio CDN as mirror
 ## This gets us updated r-base, r-base-dev, r-recommended and littler
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
