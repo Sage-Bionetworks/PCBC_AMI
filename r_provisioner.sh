@@ -39,3 +39,10 @@ dpkg -i rstudio-0.99.691-amd64.deb
 cd /root/
 wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb
 dpkg -i rstudio-server-0.99.484-amd64.deb
+
+Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/sleuth")'
+
+## Bioconductor
+Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
+
+Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("BSgenome", "Rsamtools", "ShortRead"))'
