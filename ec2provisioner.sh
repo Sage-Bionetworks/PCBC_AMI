@@ -76,22 +76,22 @@ pip install MACS2
 
 apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
 
-## PathVisio
-cd /opt/
-wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
-tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
-wget -P /opt/pathvisio-3.2.0/ http://www.pathvisio.org/wcms/wp-content/uploads/2013/03/pathvisio-eye-switch-e1363105300175.png
-
-wget -P /home/pcbc/Downloads/ http://bridgedb.org/data/gene_database/metabolites_20140516.bridge.zip
-wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Hs_Derby_20130701.zip
-wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Mm_Derby_20130701.zip
-wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Interactions-02022013-Rhea.bridge
-wget -P /home/pcbc/Downloads/ 'http://www.wikipathways.org//wpi/batchDownload.php?species=Homo%20sapiens&fileType=gpml&tag=Curation:AnalysisCollection'
-
-## Cytoscape
-cd /opt/
-wget http://chianti.ucsd.edu/cytoscape-3.2.1/Cytoscape_3_2_1_unix.sh
-sh Cytoscape_3_2_1_unix.sh -q
+# ## PathVisio
+# cd /opt/
+# wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
+# tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
+# wget -P /opt/pathvisio-3.2.0/ http://www.pathvisio.org/wcms/wp-content/uploads/2013/03/pathvisio-eye-switch-e1363105300175.png
+#
+# wget -P /home/pcbc/Downloads/ http://bridgedb.org/data/gene_database/metabolites_20140516.bridge.zip
+# wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Hs_Derby_20130701.zip
+# wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Mm_Derby_20130701.zip
+# wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Interactions-02022013-Rhea.bridge
+# wget -P /home/pcbc/Downloads/ 'http://www.wikipathways.org//wpi/batchDownload.php?species=Homo%20sapiens&fileType=gpml&tag=Curation:AnalysisCollection'
+#
+# ## Cytoscape
+# cd /opt/
+# wget http://chianti.ucsd.edu/cytoscape-3.2.1/Cytoscape_3_2_1_unix.sh
+# sh Cytoscape_3_2_1_unix.sh -q
 
 # ## RStudio
 # apt-get install -y libjpeg62
@@ -104,21 +104,21 @@ sh Cytoscape_3_2_1_unix.sh -q
 # wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb
 # dpkg -i rstudio-server-0.99.484-amd64.deb
 
-## kallisto and sleuth
-apt-get install -y cmake libhdf5-dev
-cd /root
-wget https://github.com/pachterlab/kallisto/archive/v0.42.3.tar.gz
-cd kallisto-0.42.3
-mkdir build
-cd build
-cmake .. && make && make install
+# ## kallisto and sleuth
+# apt-get install -y cmake libhdf5-dev
+# cd /root
+# wget https://github.com/pachterlab/kallisto/archive/v0.42.3.tar.gz
+# cd kallisto-0.42.3
+# mkdir build
+# cd build
+# cmake .. && make && make install
 
-Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/sleuth")'
-
-## Bioconductor
-Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
-
-Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("BSgenome", "Rsamtools", "ShortRead"))'
+# Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/sleuth")'
+#
+# ## Bioconductor
+# Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite()'
+#
+# Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("BSgenome", "Rsamtools", "ShortRead"))'
 
 ## ngsPlot
 ## Need to export NGSPLOT=/opt/ngsplot-2.61
