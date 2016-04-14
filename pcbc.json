@@ -13,18 +13,8 @@
 	    "source_ami": "ami-f9ceb79c",
 	    "ssh_username": "ubuntu",
 	    "ami_name": "ubuntu-PCBC {{timestamp}}",
-	    "instance_type": "m3.xlarge",
-	    "ami_block_device_mappings": [ {
-		"device_name": "/dev/xvda",
-		"volume_size": 100,
-		"delete_on_termination": true
-            } ],
-            "launch_block_device_mappings": [ {
-		"device_name": "/dev/xvda",
-		"volume_size": 100,
-		"delete_on_termination": true
-            } ]
-	},
+	    "instance_type": "m3.xlarge"
+    },
 	{
 	     "type": "docker",
 	     "image": "ubuntu:14.04",
