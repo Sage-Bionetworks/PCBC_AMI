@@ -31,13 +31,26 @@
 	     "export_path": "pcbc_docker_image.tar"
 	 }],
 
-    "provisioners": [
+     "provisioners": [
+         {"type": "shell",
+          "inline": ["sed -i -e 's/PasswordAuthentication no/PasswordAuthentication yes/'' /etc/ssh/sshd_config",
+                    "service ssh restart"],
+          "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+          "only": ["amazon-ebs"]
+     },
 	{
 	    "type": "shell",
 	    "scripts": ["ec2provisioner.sh", "altanalyze_provisioner.sh", "synapseprovisioner.sh"],
 	    "pause_before": "10s",
 	    "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
 	    "only": ["amazon-ebs", "docker"]
+	},
+    {
+	    "type": "shell",
+	    "scripts": ["x2go_provisioner.sh"],
+	    "pause_before": "10s",
+	    "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+	    "only": ["amazon-ebs"]
 	}
     ],
 
