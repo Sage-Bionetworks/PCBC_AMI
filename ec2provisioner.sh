@@ -11,9 +11,7 @@ chsh -s /bin/bash pcbc
 # service ssh restart
 
 apt-get update
-
 apt-get install -y --no-install-recommends ed less locales vim-tiny wget
-
 apt-get install -y curl libcurl4-openssl-dev libxml2-dev git
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
@@ -26,36 +24,36 @@ export LC_ALL="en_US.UTF-8"
 ## Desktop
 apt-get install -y xubuntu-desktop
 
-## Use Ubuntu repo at CRAN, and use RStudio CDN as mirror
-## This gets us updated r-base, r-base-dev, r-recommended and littler
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-gpg -a --export E084DAB9 | apt-key add -
-
-echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" > /etc/apt/sources.list.d/r-cran.list
-
-export R_BASE_VERSION=3.1.2
-
-# ## Now install R and littler, and create a link for littler in /usr/local/bin
-apt-get update
-apt-get install -y --no-install-recommends littler r-base=${R_BASE_VERSION}* r-base-dev=${R_BASE_VERSION}* r-recommended=${R_BASE_VERSION}*
-
-ln -s /usr/share/doc/littler/examples/install.r /usr/local/bin/install.r
-ln -s /usr/share/doc/littler/examples/install2.r /usr/local/bin/install2.r
-ln -s /usr/share/doc/littler/examples/installGithub.r /usr/local/bin/installGithub.r
-ln -s /usr/share/doc/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r
-
-## Set a default CRAN Repo
-echo 'options(repos = list(CRAN="https://cran.rstudio.com/"))' >> /etc/R/Rprofile.site
-
-echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r
-
-install.r docopt
-
-## OTher stuff
-install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table httr RCurl swirl devtools
-
-Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
-Rscript -e 'devtools::install_github("brian-bot/githubr")'
+# ## Use Ubuntu repo at CRAN, and use RStudio CDN as mirror
+# ## This gets us updated r-base, r-base-dev, r-recommended and littler
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+# gpg -a --export E084DAB9 | apt-key add -
+#
+# echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" > /etc/apt/sources.list.d/r-cran.list
+#
+# export R_BASE_VERSION=3.1.2
+#
+# # ## Now install R and littler, and create a link for littler in /usr/local/bin
+# apt-get update
+# apt-get install -y --no-install-recommends littler r-base=${R_BASE_VERSION}* r-base-dev=${R_BASE_VERSION}* r-recommended=${R_BASE_VERSION}*
+#
+# ln -s /usr/share/doc/littler/examples/install.r /usr/local/bin/install.r
+# ln -s /usr/share/doc/littler/examples/install2.r /usr/local/bin/install2.r
+# ln -s /usr/share/doc/littler/examples/installGithub.r /usr/local/bin/installGithub.r
+# ln -s /usr/share/doc/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r
+#
+# ## Set a default CRAN Repo
+# echo 'options(repos = list(CRAN="https://cran.rstudio.com/"))' >> /etc/R/Rprofile.site
+#
+# echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r
+#
+# install.r docopt
+#
+# ## OTher stuff
+# install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table httr RCurl swirl devtools
+#
+# Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
+# Rscript -e 'devtools::install_github("brian-bot/githubr")'
 
 ## For python/ipython
 apt-get install -y python-pip python-dev build-essential libzmq3 libzmq3-dev tcl tcl-dev tk tk-dev libagg-dev python-tk openjdk-7-jre
@@ -78,12 +76,6 @@ pip install MACS2
 
 apt-get install -y python-wxgtk2.8 libwxbase2.8-dev
 
-## x2go server for remote access
-apt-get install -y software-properties-common
-add-apt-repository -y ppa:x2go/stable
-apt-get update
-apt-get install -y x2goserver x2goserver-xsession
-
 ## PathVisio
 cd /opt/
 wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
@@ -101,16 +93,16 @@ cd /opt/
 wget http://chianti.ucsd.edu/cytoscape-3.2.1/Cytoscape_3_2_1_unix.sh
 sh Cytoscape_3_2_1_unix.sh -q
 
-## RStudio
-apt-get install -y libjpeg62
-cd /opt/
-wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
-dpkg -i rstudio-0.99.691-amd64.deb
-
-## RStudio Server
-cd /root/
-wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb
-dpkg -i rstudio-server-0.99.484-amd64.deb
+# ## RStudio
+# apt-get install -y libjpeg62
+# cd /opt/
+# wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
+# dpkg -i rstudio-0.99.691-amd64.deb
+#
+# ## RStudio Server
+# cd /root/
+# wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb
+# dpkg -i rstudio-server-0.99.484-amd64.deb
 
 ## kallisto and sleuth
 apt-get install -y cmake libhdf5-dev
