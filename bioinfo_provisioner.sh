@@ -47,12 +47,12 @@ export PATH=${PATH}:/opt/weblogo
 
 # samtools
 cd /root
-wget -O samtools-1.3.tar.bz2 "http://downloads.sourceforge.net/project/samtools/samtools/1.3/samtools-1.3.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsamtools%2Ffiles%2F&ts=1460658865&use_mirror=iweb"
+curl --location "http://downloads.sourceforge.net/project/samtools/samtools/1.3/samtools-1.3.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsamtools%2Ffiles%2F&ts=1460658865&use_mirror=iweb" -o samtools-1.3.tar.bz2
 tar xjf samtools-1.3.tar.bz2
 cd samtools-1.3
 ./configure && make && make install
 
 mkdir /opt/homer
 export PATH=$PATH:/opt/homer/bin
-wget http://homer.salk.edu/homer/configureHomer.pl -C /opt/homer
+wget http://homer.salk.edu/homer/configureHomer.pl -P /opt/homer
 perl /opt/homer/configureHomer.pl -install
