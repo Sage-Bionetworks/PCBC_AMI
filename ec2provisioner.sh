@@ -151,6 +151,6 @@ export LC_ALL="en_US.UTF-8"
 # wget http://homer.salk.edu/homer/configureHomer.pl -C /opt/homer
 # perl /opt/homer/configureHomer.pl -install
 
-## Cleanup
-rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-rm -rf /var/lib/apt/lists/*
+# ## Cleanup
+# rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+# rm -rf /var/lib/apt/lists/*
