@@ -3,7 +3,7 @@
 useradd pcbc
 mkdir /home/pcbc
 chown pcbc:users /home/pcbc
-echo pcbc:pcbc2015 | chpasswd
+echo pcbcseattle:pcbc2016pcbc | chpasswd
 chsh -s /bin/bash pcbc
 
 export DEBIAN_FRONTEND=noninteractive

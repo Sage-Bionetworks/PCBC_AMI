@@ -12,7 +12,7 @@
 	    "region": "us-east-1",
 	    "source_ami": "ami-f9ceb79c",
 	    "ssh_username": "ubuntu",
-	    "ami_name": "ubuntu-PCBC {{timestamp}}",
+	    "ami_name": "ubuntu-PCBC Seattle 2016 {{timestamp}}",
 	    "instance_type": "m3.xlarge"
     },
 	{
