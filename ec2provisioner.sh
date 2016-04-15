@@ -11,6 +11,7 @@ chsh -s /bin/bash pcbc
 # service ssh restart
 
 apt-get update
+export DEBIAN_FRONTEND=noninteractive
 apt-get install -y --no-install-recommends ed less locales vim-tiny wget
 apt-get install -y curl libcurl4-openssl-dev libxml2-dev git libncurses5-dev
 
