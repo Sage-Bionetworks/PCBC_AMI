@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+apt-get install -y tk-dev python-tk
+
 cd /opt
 git clone https://github.com/kdaily/altanalyze.git
 cd altanalyze
