@@ -21,8 +21,8 @@ locale-gen en_US.utf8
 
 export LC_ALL="en_US.UTF-8"
 
-## Desktop
-apt-get install -y xubuntu-desktop
+# ## Desktop
+# apt-get install -y xubuntu-desktop
 
 # ## Use Ubuntu repo at CRAN, and use RStudio CDN as mirror
 # ## This gets us updated r-base, r-base-dev, r-recommended and littler
