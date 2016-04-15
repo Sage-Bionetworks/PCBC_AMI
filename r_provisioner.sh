@@ -31,16 +31,14 @@ install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table htt
 Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
 Rscript -e 'devtools::install_github("brian-bot/githubr")'
 
-## RStudio
-apt-get install -y libjpeg62
-cd /opt/
-wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb
-dpkg -i rstudio-0.99.691-amd64.deb
+# ## RStudio
+# apt-get install -y libjpeg62
+# wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb -P /root/
+# dpkg -i /root/rstudio-0.99.691-amd64.deb
 
-## RStudio Server
-cd /root/
-wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb
-dpkg -i rstudio-server-0.99.484-amd64.deb
+# ## RStudio Server
+# wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb -P /root/
+# dpkg -i /root/rstudio-server-0.99.484-amd64.deb
 
 Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("pachterlab/sleuth")'
 

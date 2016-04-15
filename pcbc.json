@@ -45,10 +45,21 @@
   {
 	    "type": "shell",
 	    "scripts": ["r_provisioner.sh", "bioinfo_provisioner.sh", "altanalyze_provisioner.sh", "synapseprovisioner.sh"],
-	    "pause_before": "10s",
+      "pause_before": "10s",
 	    "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
 	    "only": ["amazon-ebs", "docker"]
 	},
+  {
+    "type": "shell",
+    "inline": ["apt-get install -y libjpeg62",
+               "wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb -P /root/"
+               "dpkg -i /root/rstudio-0.99.691-amd64.deb",
+               "wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb -P /root/",
+               "dpkg -i /root/rstudio-server-0.99.484-amd64.deb"],
+     "pause_before": "10s",
+     "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+     "only": ["amazon-ebs"]
+  },
     {
 	    "type": "shell",
 	    "scripts": ["x2go_provisioner.sh"],
