@@ -52,7 +52,7 @@
   {
     "type": "shell",
     "inline": ["apt-get install -y libjpeg62",
-               "wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb -P /root/"
+               "wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-0.99.691-amd64.deb -P /root/",
                "dpkg -i /root/rstudio-0.99.691-amd64.deb",
                "wget https://download2.rstudio.org/rstudio-server-0.99.484-amd64.deb -P /root/",
                "dpkg -i /root/rstudio-server-0.99.484-amd64.deb"],
