@@ -23,6 +23,12 @@
 
      "provisioners": [
          {"type": "shell",
+          "inline": ["apt-get update"],
+          "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+          "only": ["amazon-ebs", "docker"]
+     },
+
+         {"type": "shell",
           "inline": ["sed -i -e 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config",
                     "service ssh restart"],
           "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
