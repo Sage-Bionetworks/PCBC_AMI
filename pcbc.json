@@ -81,10 +81,7 @@
        "pause_before": "10s",
        "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
        "only": ["docker", "amazon-ebs"]
-    },
-
-
-
+    }
     ],
 
     "post-processors": [
