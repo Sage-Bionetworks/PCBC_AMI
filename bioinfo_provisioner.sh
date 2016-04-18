@@ -22,7 +22,7 @@ make
 
 ## Cytoscape
 cd /opt/
-wget http://chianti.ucsd.edu/cytoscape-3.2.1/Cytoscape_3_2_1_unix.sh
+wget http://chianti.ucsd.edu/cytoscape-3.3.0/Cytoscape_3_3_0_unix.sh
 sh Cytoscape_3_2_1_unix.sh -q
 
 ## kallisto and sleuth
