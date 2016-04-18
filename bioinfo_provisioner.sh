@@ -1,16 +1,24 @@
 #!/bin/bash -x
 
-## PathVisio
-cd /opt/
-wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
-tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
-wget -P /opt/pathvisio-3.2.0/ http://www.pathvisio.org/wcms/wp-content/uploads/2013/03/pathvisio-eye-switch-e1363105300175.png
+# UCSC tools
+mkdir /opt/ucsc_tools
+wget http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v309.src.tgz -P /opt/ucsc_tools
+cd /opt/ucsc_tools
+tar xzf userApps.v309.src.tgz
+cd userApps
+make
 
-wget -P /home/pcbc/Downloads/ http://bridgedb.org/data/gene_database/metabolites_20140516.bridge.zip
-wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Hs_Derby_20130701.zip
-wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Mm_Derby_20130701.zip
-wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Interactions-02022013-Rhea.bridge
-wget -P /home/pcbc/Downloads/ 'http://www.wikipathways.org//wpi/batchDownload.php?species=Homo%20sapiens&fileType=gpml&tag=Curation:AnalysisCollection'
+# ## PathVisio
+# cd /opt/
+# wget http://developers.pathvisio.org/data/releases/current/pathvisio_bin-3.2.0-r3999.tar.gz
+# tar xzf pathvisio_bin-3.2.0-r3999.tar.gz
+# wget -P /opt/pathvisio-3.2.0/ http://www.pathvisio.org/wcms/wp-content/uploads/2013/03/pathvisio-eye-switch-e1363105300175.png
+
+# wget -P /home/pcbc/Downloads/ http://bridgedb.org/data/gene_database/metabolites_20140516.bridge.zip
+# wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Hs_Derby_20130701.zip
+# wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Mm_Derby_20130701.zip
+# wget -P /home/pcbc/Downloads/ http://www.pathvisio.org/data/gene_database/Interactions-02022013-Rhea.bridge
+# wget -P /home/pcbc/Downloads/ 'http://www.wikipathways.org//wpi/batchDownload.php?species=Homo%20sapiens&fileType=gpml&tag=Curation:AnalysisCollection'
 
 ## Cytoscape
 cd /opt/
@@ -40,6 +48,7 @@ wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver -P /opt/ucsc
 chmod +x /opt/ucsc/*
 export PATH=${PATH}:/opt/ucsc
 
+# Weblogo
 cd /root
 wget http://weblogo.berkeley.edu/release/weblogo.2.8.2.tar.gz
 tar xzf weblogo.2.8.2.tar.gz -C /opt
@@ -56,3 +65,8 @@ mkdir /opt/homer
 export PATH=$PATH:/opt/homer/bin
 wget http://homer.salk.edu/homer/configureHomer.pl -P /opt/homer
 perl /opt/homer/configureHomer.pl -install
+
+# IGV
+mkdir /opt/IGV
+wget http://data.broadinstitute.org/igv/projects/downloads/IGV_2.3.72.zip -P /opt/IGV
+unzip /opt/IGV/IGV_2.3.72.zip
