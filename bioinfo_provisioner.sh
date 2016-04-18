@@ -7,6 +7,7 @@ cd /opt/ucsc_tools
 tar xzf userApps.v309.src.tgz
 cd userApps
 make
+export PATH=${PATH}:/opt/ucsc_tools/userApps/bin
 
 # ## PathVisio
 # cd /opt/
@@ -41,12 +42,12 @@ wget https://github.com/shenlab-sinai/ngsplot/archive/2.61.tar.gz
 tar xzf 2.61.tar.gz -C /opt
 
 ## Homer stuff
-mkdir /opt/ucsc
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat -P /opt/ucsc
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig -P /opt/ucsc
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver -P /opt/ucsc
-chmod +x /opt/ucsc/*
-export PATH=${PATH}:/opt/ucsc
+# mkdir /opt/ucsc
+# wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat -P /opt/ucsc
+# wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig -P /opt/ucsc
+# wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver -P /opt/ucsc
+# chmod +x /opt/ucsc/*
+# export PATH=${PATH}:/opt/ucsc
 
 # Weblogo
 cd /root
@@ -61,6 +62,7 @@ tar xjf samtools-1.3.tar.bz2
 cd samtools-1.3
 ./configure && make && make install
 
+# Homer
 mkdir /opt/homer
 export PATH=$PATH:/opt/homer/bin
 wget http://homer.salk.edu/homer/configureHomer.pl -P /opt/homer
