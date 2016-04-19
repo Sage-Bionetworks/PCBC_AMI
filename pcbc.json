@@ -42,7 +42,7 @@
 	},
   {
 	    "type": "shell",
-	    "scripts": ["r_provisioner.sh", "bioinfo_provisioner.sh", "altanalyze_provisioner.sh", "synapseprovisioner.sh"],
+	    "scripts": ["r_provisioner.sh", "python_provisioner.sh", "bioinfo_provisioner.sh", "altanalyze_provisioner.sh", "synapseprovisioner.sh"],
       "pause_before": "10s",
 	    "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
 	    "only": ["amazon-ebs", "docker"]

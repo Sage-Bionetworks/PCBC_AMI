@@ -1,5 +1,5 @@
 #!/bin/bash -x
-
+apt-get -y install python-pip
 sudo pip install synapseclient
 
 ## For the R client

@@ -2,13 +2,15 @@
 
 ## For python/ipython
 apt-get install -y python-pip python-dev build-essential libzmq3 libzmq3-dev tcl tcl-dev tk tk-dev libagg-dev python-tk openjdk-7-jre
+apt-get install -y libopenblas-dev libopenblas-base liblapack-dev gfortran python-dev
 
 pip install numpy
-pip install pandas
-pip install ipython pyzmq jinja2 tornado
 pip install scipy
-
+pip install pandas
 pip install matplotlib
+
+pip install jupyter ipython pyzmq jinja2 tornado
+
 pip install pysam
 pip install sklearn
 

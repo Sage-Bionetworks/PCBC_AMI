@@ -26,7 +26,9 @@ echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r
 install.r docopt
 
 ## OTher stuff
-install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table httr RCurl swirl devtools
+install.r ggplot2 plyr dplyr tidyr reshape reshape2 stringr knitr data.table httr RCurl devtools broom
+
+# Rscript -e "install.packages('swirl') ; library(swirl) ; install_from_swirl('R_Programming_Alt') ; install_from_swirl('Getting_and_Cleaning_Data'); install_from_swirl('Exploratory_Data_Analysis') ; install_from_swirl('Data_Analysis')"
 
 Rscript -e 'devtools::install_github("Sage-Bionetworks/knit2synapse")'
 Rscript -e 'devtools::install_github("brian-bot/githubr")'
